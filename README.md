@@ -2,6 +2,8 @@
 Powershell script that will send Windows Performance Counters to a Splunk metrics index via HEC.
 
 To allow the script to run:
-`set-executionpolicy -ExecutionPolicy remotesigned -scope localmachine
+```
+set-executionpolicy -ExecutionPolicy remotesigned -scope localmachine
 
-`Unblock-File -path .\metrics2hec.ps1
+Unblock-File -path .\metrics2hec.ps1
+```
