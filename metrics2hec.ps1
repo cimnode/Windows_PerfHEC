@@ -15,7 +15,7 @@ add-type @"
 [System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
 
 
-# Read from paramenters
+# Settings are passed as parameters on the command line invocation of script.
 # 1. URL to send data to ( "https://<<<your server name>>>:8088/services/collector" )
 # 2. HEC Token
 # 3. target Splunk index which must be a datatype 'metric'
