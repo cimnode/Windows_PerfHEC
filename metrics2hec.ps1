@@ -1,3 +1,6 @@
+# This block disable SSL verification, and allows self-signed certificates. 
+# This can be removed if certs are fully setup. In version 6.0+ of Powershell, 
+# use the -SkipCertificateCheck flag on Invoke-RestMethod and remove this section.
 add-type @"
     using System.Net;
     using System.Security.Cryptography.X509Certificates;
