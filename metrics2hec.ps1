@@ -26,14 +26,14 @@ $SPLUNK_INDEX = $Args[2]
 
 $countersObj = Get-Counter | Select-Object -expand Countersamples | Select-Object Path,CookedValue 
 
-$metric_string = ""
+$metrics_string = ""
 foreach( $counter in $countersObj )
 {
 	# Get rid of the computer name from the string
 	$path = $counter.Path.split('\')[-2..-1] -join "." 
 	# Make the string nice for a metric name.
 	$path = (Get-Culture).TextInfo.ToTitleCase($path.replace("(_total)","")).replace(" ","").replace("/","Per").replace("%","Percent").replace(")","").replace("(",".")
-	$metric_string += '"' + $path + '":"' + ([Math]::Round($counter.CookedValue,3)) + '",'
+	$metrics_string += '"metric_name:' + $path + '":"' + ([Math]::Round($counter.CookedValue,3)) + '",'
 }
 
 #Write-Output $metric_string
