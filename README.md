@@ -1,5 +1,5 @@
 # splunk_agentless
-Powershell script that will send Windows Performance Counters to a Splunk metrics index via HEC.
+Powershell script that will send Windows Performance Counters to a Splunk metrics index via HEC. metrics2hec.ps1 runs in 1-2 seconds and used the default output of get-counters. moremetrics2hec.ps1 sends more data, but has a longer runtime.
 
 *This requires a HEC token configured allowing access to a metric index.*
 
