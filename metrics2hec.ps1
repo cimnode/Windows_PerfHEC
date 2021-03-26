@@ -36,15 +36,12 @@ foreach( $counter in $countersObj )
 	$metrics_string += '"metric_name:' + $path + '":"' + ([Math]::Round($counter.CookedValue,3)) + '",'
 }
 
-#Write-Output $metric_string
-
 ### Output section
 
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Authorization", 'Splunk ' + $HEC_TOKEN)
 
 $body = '{"event":"metric","fields":{'+ $metrics_string + '}, "index":"'+$SPLUNK_INDEX+'","host":"' + $env:computername + '","sourcetype":"WindowsMetrics","source":"'+ $MyInvocation.MyCommand.Name + '"}'
-#Write-Output $body
 
 $response = Invoke-RestMethod -Uri $SPLUNK_URL  -Method Post -Headers $headers -Body $body 
 "Code:'" + $response.code + "' text:'"+ $response.text + "'"
