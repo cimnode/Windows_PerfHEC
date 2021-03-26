@@ -14,3 +14,4 @@ Example invocation.
 ```
 .\metrics2hec.ps1 "https://yourserver.com:8088/services/collector" abcef001-1234-5678-90ab-cdef01234567 metric_index
 ```
+A scheduled task can be created to send this every 1 minute, or at some other desired interval.
