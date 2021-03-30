@@ -8,7 +8,7 @@ Install Script
 2. Run the install_metrics.bat script. This will allow you to enter the server, token and index and create the scheduled task.
 
 Manual Steps
-It may be necessary to modify security to allow the script to run. Windows 10 runs in the most restricted mode normally. This step may not be need to Windows Server.
+It may be necessary to modify security using Set-ExecutionPolicy to allow the script to run. Windows 10 runs in the most restricted mode normally. This step should have no affect on Windows Servers as RemoteSigned is the default posture. 
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
