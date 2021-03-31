@@ -33,4 +33,4 @@ powershell -Command Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Loc
 powershell -Command Unblock-File -Path '%cd%\metrics2hec.ps1'
 
 ECHO Creating scheduled task.
-SCHTASKS /CREATE /RU SYSTEM /SC minute /MO 1 /TN "Spunk Metrics2HEC" /TR "powershell -File '%cd%\metrics2hec.ps1' https://%SPLUNK_SERVER%:8088/services/collector %SPLUNK_HEC_TOKEN% %SPLUNK_INDEX%"
+SCHTASKS /CREATE /RU SYSTEM /SC minute /MO 1 /TN "Splunk Metrics2HEC" /TR "powershell -File '%cd%\metrics2hec.ps1' https://%SPLUNK_SERVER%:8088/services/collector %SPLUNK_HEC_TOKEN% %SPLUNK_INDEX%"
