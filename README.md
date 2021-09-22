@@ -22,12 +22,16 @@ Example invocation.
 A scheduled task can be created to send this every 1 minute, or at some other desired interval.
 
 Example HEC data:
+```
 {"metric_name:Memory.CacheFaultsPerSec":0,"metric_name:Memory.PercentCommittedBytesInUse":38.938,"metric_name:NetworkInterface.Intel[R]DualBandWireless-Ac8265.BytesTotalPerSec":576.089,"metric_name:Physicaldisk.CurrentDiskQueueLength":0,"metric_name:Physicaldisk.PercentDiskTime":0,"metric_name:Processor.PercentProcessorTime":0}
-
+```
 Data Preview:
+```
 | msearch index=<<your metrics index>> |search source="metrics2hec.ps1"
-
+```
 Exampe Splunk Query
+```
 | mstats avg("Processor.PercentProcessorTime") prestats=true WHERE "index"="<<your_metrics_index>>" by host span=10m
 | timechart avg("Processor.PercentProcessorTime") AS Avg span=10s by host
 | fields - _span*
+```
