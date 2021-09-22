@@ -20,3 +20,9 @@ Example invocation.
 .\metrics2hec.ps1 "https://yourserver.com:8088/services/collector" abcdef01-1234-5678-90ab-cdef01234567 metric_index
 ```
 A scheduled task can be created to send this every 1 minute, or at some other desired interval.
+
+
+Exampe Splunk Query
+| mstats avg("Processor.PercentProcessorTime") prestats=true WHERE "index"="<<your_metrics_index>>" by host span=10m
+| timechart avg("Processor.PercentProcessorTime") AS Avg span=10s by host
+| fields - _span*
