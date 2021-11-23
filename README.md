@@ -1,5 +1,5 @@
 # Windows Performance to Splunk HEC
-Powershell script that will send Windows Performance Counters to a Splunk metrics index via HEC. metrics2hec.ps1 runs in 1-2 seconds and uses the default output of get-counters. moremetrics2hec.ps1 sends more data, but has a longer runtime.
+Powershell script that will send Windows performance counters to a Splunk metrics index via HEC. metrics2hec.ps1 runs in 1-2 seconds and uses the default output of get-counters. moremetrics2hec.ps1 sends more data, but has a longer runtime.
 
 *These scripts require a HEC token configured allowing access to a metric index.*
 
