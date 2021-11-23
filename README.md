@@ -5,10 +5,10 @@ Powershell script that will send Windows Performance Counters to a Splunk metric
 
 Install Script
 1. Download this repository into a location where the ps1 script will reside permanently.
-2. Run the install_metrics.bat script from an elevated cmd prompt. This will prompt for server, token and index to automatically create the scheduled task.
+2. Run the install_metrics.bat script from an elevated cmd prompt. This will prompt for server, token and index to automatically create the scheduled task. It will also set the execution policy.
 
 Manual Steps
-It may be necessary to modify security using Set-ExecutionPolicy to allow the script to run. Windows 10 runs in the most restricted mode normally. This step should have no affect on Windows Servers as RemoteSigned is the default posture. 
+The install batch will Set-ExecutionPolicy to allow the Powershell script to run. Windows 10 runs in the most restricted mode normally. This step should have no affect on Windows Servers as RemoteSigned is the default posture. 
 ```
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 
