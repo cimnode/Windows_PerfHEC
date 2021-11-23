@@ -7,7 +7,7 @@ Powershell script that will send Windows performance counters to a Splunk metric
 
 **Install Script**  
 Automatically configure a scheduled task to run the script every 1 minute and send the data to HEC endpoint.
-1. Download this repository into a location where the ps1 script will reside permanently.
+1. Download and unzip this repository into a location where the ps1 script will reside permanently.
 2. Run the install_metrics.bat script from an elevated cmd prompt. This will prompt for server, token and index to automatically create the scheduled task. It will also set the execution policy.
 
 **Manual Setup**  
