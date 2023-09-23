@@ -1,3 +1,5 @@
+Reduce data ingested and license usage. The Splunkbase app that performs the same data collection utilizes single events, and this rolls up the events into a single metrics events. As metrics events are licensed per event, this method will significantly reduce the license used.  
+  
 # Windows Performance to Splunk HEC
 Powershell script that will send Windows performance counters to a Splunk metrics index via HEC.  
 - metrics2hec.ps1 runs in 1-2 seconds and uses the default output of get-counters.  
